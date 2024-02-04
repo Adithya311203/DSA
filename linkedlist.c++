@@ -61,18 +61,30 @@ bool search(node* head, int key){
     }
     return false;
 }
+
+void deletehead(node* &head){
+    node* delnode = head;
+    head=head->next;
+    delete delnode;
+}
+
 void deletion(node* &head, int val){
-    /*if(head==NULL){
+    if(head==NULL){
         return;
-    }*/
+    }
+    if(head->next==NULL){
+        deletehead(head);
+    }
     node* temp= head;
     while(temp->next->data!=val){
         temp=temp->next;
     }
-    node* del= temp->next;
+    node* delnode= temp->next;
     temp->next=temp->next->next;
-    delete del;
+    delete delnode;
 }
+
+
 void display(node* head){
     node* temp=head;
     while(temp!=NULL){
@@ -89,10 +101,13 @@ int main()
     insertAtTail(head,1);
     insertAtTail(head,4);
     insertAtTail(head,5);
-    //insertAtHead(head,0);
-    //insertInBetween(head,6,5);
-    //insertInBetween(head,2,1);
-    deletion(head,1);
+    insertAtHead(head,0);
+    insertInBetween(head,6,5);
+    insertInBetween(head,2,1);
+    display(head);
+    deletion(head,6);
+    display(head);
+    deletehead(head);
     display(head);
     //cout<< search(head, 2);
     return 0;
