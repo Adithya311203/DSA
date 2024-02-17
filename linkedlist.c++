@@ -42,15 +42,7 @@ void insertInBetween(node* &head, int val,int key){
 }
 
 
-void insertAtHead(node* &head,int val){
-    node* n=new node(val);
-    if(head==NULL){
-        head=n;
-        return;
-    }
-    n->next=head;
-    head=n;
-}
+//searching 
 bool search(node* head, int key){
     node* temp=head;
     while(temp!=NULL){
