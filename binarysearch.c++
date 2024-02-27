@@ -1,5 +1,5 @@
-#include <bits/stdc++.h>
-
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
 int main()
@@ -11,8 +11,9 @@ int main()
         cin>>arr[i];
     }
     sort(arr,arr+n);
-    int first=arr[0];
-    int last=arr[n-1];
+    
+    int first=0;
+    int last=n-1;
     while(first!=last){
         int mid=(first+last)/2;
         if(key==arr[mid]){
