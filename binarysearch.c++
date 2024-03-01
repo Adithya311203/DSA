@@ -26,7 +26,8 @@ int main()
         else{
             last=mid-1;
         }
-    }
+}
+
     if (first>=last) cout<<"Element not found "<<endl;
     return 0;
 }
