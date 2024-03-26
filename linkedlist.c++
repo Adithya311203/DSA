@@ -60,6 +60,14 @@ void deletehead(node* &head){
     delete delnode;
 }
 
+void display(node* head){
+    node* temp=head;
+    while(temp!=NULL){
+        cout<<temp->data<<"->";
+        temp=temp->next;
+    }
+    cout<<"NULL"<<endl;
+}
 void deletion(node* &head, int val){
     if(head==NULL){
         return;
@@ -77,14 +85,6 @@ void deletion(node* &head, int val){
 }
 
 
-void display(node* head){
-    node* temp=head;
-    while(temp!=NULL){
-        cout<<temp->data<<"->";
-        temp=temp->next;
-    }
-    cout<<"NULL"<<endl;
-}
 
 int main()
 {
